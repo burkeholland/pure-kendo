@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Pure CSS With Kendo UI
+    </title>
+    <link rel="stylesheet" href="components/pure/build/pure-min.css">
+    <link rel="stylesheet" href="components/kendo-ui/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="components/kendo-ui/styles/kendo.metro.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+    
+<body>
+  <div data-bind="visible: loading" class="loading">
+    <div class="k-loading-mask">
+      <span class="k-loading-text"></span>
+      <div class="k-loading-image"></div><div class="k-loading-color"></div>
+    </div>
+  </div>
+  <div class="pure-g">
+    <div class="pure-u header">
+      <h1>Pure Reader</h1>
+    </div>
+  </div>
+  <div class="pure-g-r layout">
+    <div class="pure-u-1-4" id="menu">
+      <a class="pure-button primary-button" data-bind="click: add" href="#">Add Feed</a>
+      <a class="pure-button" data-bind="visible: selected, click: remove">Delete Feed</a>
+      <div class="pure-menu pure-menu-open">
+        <ul id="feeds" data-role="listview" data-bind="source: list, events: { change: select }" data-template="feed-bar-template" data-selectable="true"></ul>
+      </div>
+      <div id="add-feed-window">
+        <input class="k-textbox" data-bind="value: url" type="url" placeholder="URL">
+        <button class="pure-button notice" data-bind="click: save">Save</button>
+      </div>
+    </div>
+    <div class="pure-u-3-4" id="main">
+      <ul data-role="panelbar" id="posts-list" data-expand-mode="single"></ul>
+    </div>
+  </div>
+    
+  <script type="text/x-kendo-template" id="feed-bar-template">
+    <li>
+      <a href="\\\#" data-url="#: url #">#: name #</a>
+    </li>
+  </script>
+
+  <script type="text/x-kendo-template" id="post-item-template">
+    <div class="post" data-link="#: link #">
+      <div class="post-content pure-g">
+        <div class="pure-u post-content-controls">
+          <a class="pure-button secondary-button" data-bind="click: preview" data-url="#: link #">Preview</a>
+        </div>
+      </div>
+      <div class="content"></div>
+    </div>
+  </script>
+
+
+  <script src="components/jquery/jquery.min.js"></script>
+  <script src="components/kendo-ui/js/kendo.web.min.js"></script>
+  <script src="build.js"></script>
+    
+</body>
+</html>

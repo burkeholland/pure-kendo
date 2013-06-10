@@ -1,0 +1,7 @@
+{
+  "name": "pure-kendo",
+  "version": "0.0.0",
+  "dependencies": {
+    "pure": "~0.1.0"
+  }
+}

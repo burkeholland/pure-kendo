@@ -1,0 +1,8 @@
+{
+  "name": "Pure Reader",
+  "version": "0.0.9",
+  "description": "A feed reader that uses the Pure CSS framework from Yahoo along with Kendo UI",
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}

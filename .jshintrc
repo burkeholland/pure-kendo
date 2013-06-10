@@ -1,0 +1,8 @@
+{
+  "eqeqeq": false,
+  "trailing": false,
+  "predef": [
+    "$" // jquery
+    ,"kendo" // kendo ui
+  ]
+}
